@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent implements OnInit {
 
-  private items:any[];
+   items:any[];
   constructor(private api:ApiService) { }
 
   ngOnInit(): void {

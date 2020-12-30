@@ -1,7 +1,7 @@
 <div class="header">
     <nav class="header_top">
         <div class="header_menu">
-            <div class="header_menu_icon">
+            <div class="header_menu_icon" routerLink="">
                 <mat-icon>menu</mat-icon>
             </div>
             <img src="https://pngimg.com/uploads/amazon/amazon_PNG11.png" class="header_menu_logo" alt="">
@@ -13,17 +13,18 @@
             </div>
         </div>
 
-        <div class="header_menu_signin">
-            <span class="header_menu_top_item">Hello, Sign in</span>
+        <div  class="header_menu_signin">
+            <span (click)="signOut()" class="header_menu_top_item" *ngIf="isLoggedIn()">Hello, {{authService.getUser()}}</span>
+            <span routerLink = '/login' class="header_menu_top_item" *ngIf="!isLoggedIn()">Hello, Sign in</span>
             <span class="header_menu_bottom_item">Accounts & Lists</span>
         </div>
         <div class="header_menu_signin">
             <span class="header_menu_top_item">Returns</span>
             <span class="header_menu_bottom_item">& Orders</span>
         </div>
-        <div class="header_menu_cart">
+        <div class="header_menu_cart" routerLink="checkout">
             <mat-icon>shopping_cart</mat-icon>
-            <p class="header_cart_number">3</p>
+            <p class="header_cart_number">{{shopping_cart.getShoppingCartLength()}}</p>
         </div>
     </nav>
     <nav class="header_bottom">

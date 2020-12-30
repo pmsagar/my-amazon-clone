@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "myclone-52b95": {
+      "hosting": {
+        "amazon-clone": [
+          "myclone-52b95"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "myclone-52b95"
+  }
+}
